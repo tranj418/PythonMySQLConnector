@@ -1,0 +1,32 @@
+from ast import arg
+from pydoc import cram
+import mysql.connector
+
+#def main():
+
+mydb=mysql.connector.connect(
+    host= "127.0.0.1",
+    user= "root",
+    password= "2193ECAstle!!",
+    database="one_piece",
+    autocommit=True)
+mycursor= mydb.cursor()
+
+
+query = 'delete from crew where crew_name = %s'
+crew_name = ['Kuja Pirates']
+
+#mycursor.execute(query2, crew_id)
+mycursor.execute(query, crew_name)
+mycursor.execute('Select * from crew')
+
+myresults = mycursor.fetchall()
+
+for x in myresults:
+    print(x)
+
+
+#if (mydb.is_connected()):
+#    mycursor.close()
+#    mydb.close()
+#    print("MySQL connection is closed")
