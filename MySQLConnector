@@ -1,7 +1,7 @@
 from ast import arg
 from pydoc import cram
 import mysql.connector
-
+#You have a MySQL connector repository in GitHub
 #def main():
 
 mydb=mysql.connector.connect(
@@ -18,7 +18,7 @@ crew_name = ['Kuja Pirates']
 
 #mycursor.execute(query2, crew_id)
 mycursor.execute(query, crew_name)
-mycursor.execute('Select * from crew')
+mycursor.execute('Select * from characters')
 
 myresults = mycursor.fetchall()
 
